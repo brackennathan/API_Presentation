@@ -28,16 +28,59 @@ output:
   - Key: This helps the computer read the data we see on a website
    
 ---
+
 ## Ok cool. How does this communication work?
   - Protocol: The "etiquette" underlying how computers communicate (e.g. HTTP).
-  - Also Bluetooth, POP or IMAP for emails.
-  - HTTP is the most common on the web, most companies use this
+  - Requests: What the client asks of the server
+  - Make a request following the Protocol
+  - This follows the request response cycle
 ---
-Methods: The "verbs" that clients use to talk with a server. The main one that we'll be using is GET (i.e. ask a server to retrieve information), but other common methods are POST, PUT and DELETE.
+
+## How do I make a request?
+ - Requests conatain 4 things: 
+    - URL 
+    - Methods
+    - List of Headers 
+    - Body
+---
+
+## URL?
+ - URL is an address on the internet for a thing that an API expands upon
+  - Uniform Resource Locator
+  - Key: The API "creates" URLs for more resources we see on the web
 
 ---
-Requests: What the client asks of the server (see Methods above).
+## Method? Similar to shell commands!
+ - Methods: The "verbs" that clients use to talk with a server. 
+  - Common Methods:
+    - GET -> (i.e. ask a server to retrieve information) 
+    - POST -> Ask for the creation of a new resource
+    - PUT -> Edit or update existing resource
+    - DELETE -> Delete a resource
+ - Think of this as a data delivery
+---
+
+## Headers
+  - The background (meta) information about the request
+  - Time request was made
+  - Size of the request body
+---
+
+## Body
+  - The data the client wants to send to the server
+  - Request details
 
 ---
-Response: The server's response. This includes a Status Code (e.g. "404" if not found, or "200" if successful), a Header (i.e. meta-information about the reponse), and a Body (i.e the actual content that we're interested in).
----
+
+## Great! We made our request!
+  - We should get a "response"
+  - Response: The server's response. 
+  - This includes: 
+    - a Status Code (e.g. "404" if not found, or "200" if successful)
+    - a Header (i.e. meta-information about the reponse)
+    - a Body (i.e the actual content that we're interested in).
+--- 
+
+## Data representaion 
+  - 
+--- 
