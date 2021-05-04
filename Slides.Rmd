@@ -12,4 +12,32 @@ output:
       highlightLines: true 
       highlightSpans: true
       countIncrementalSlides: false
+      keep_md: true
+---
+## Problem!
+  -Computers cannot easily use information that humans create on the web
+  - Reading, Copying, and pasting thousands of data entries takes a long time
+  - Lets get the "stupid" computer to understand inconsistent, "stupid" humans
+---
+
+## What is an API?
+  - Picture from zapier
+  - Client (Us): A program exchanges data with a server through an API 
+  - API -> Application Programming Interface (stores computer digestible data)
+  - Server: A powerful computer that hosts the API and Web Information
+  - Key: This helps the computer read the data we see on a website
+   
+---
+## Ok cool. How does this communication work?
+  - Protocol: The "etiquette" underlying how computers communicate (e.g. HTTP).
+  - Also Bluetooth, POP or IMAP for emails.
+  - HTTP is the most common on the web, most companies use this
+---
+Methods: The "verbs" that clients use to talk with a server. The main one that we'll be using is GET (i.e. ask a server to retrieve information), but other common methods are POST, PUT and DELETE.
+
+---
+Requests: What the client asks of the server (see Methods above).
+
+---
+Response: The server's response. This includes a Status Code (e.g. "404" if not found, or "200" if successful), a Header (i.e. meta-information about the reponse), and a Body (i.e the actual content that we're interested in).
 ---
