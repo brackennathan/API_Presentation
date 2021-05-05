@@ -86,11 +86,11 @@ output:
   - A data representation method
   - The server creates a format easy for both machines to understand
   - JSON -> Javascript Object Notation -> Keys and Values
-  '''r
+  '''{r}
   
   '''
   - XML -> Extensible Markup Language -> Nodes
-  '''r
+  '''{r}
   '''
   - We can specify a specific format in our header to send/receive
     - Application -> Receiving
@@ -98,9 +98,9 @@ output:
     
 ---
 
-## But wait! Theres more!
+## It can't be that simple.
   - It seems like we suddenly have free reign over all information! Just Request!
-  - Unfortunately it's not that simple
+  - Unfortunately it is not that simple
   - Servers need to authenticate just like logging into anything
   - Types of authentication: 
     - Basic Auth
