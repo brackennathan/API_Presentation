@@ -21,82 +21,108 @@ class: center, middle, inverse, title-slide
 
 ## Problem!
   - Computers cannot easily use information that humans create on the web
+  
   - Reading, Copying, and pasting thousands of data entries takes a long time
+  
   - Lets get the "stupid" computer to understand inconsistent, "stupid" humans
 ---
 
 ## What is an API?
-  - Picture from zapier
+
   - Client (Us): A program exchanges data with a server through an API 
+  
   - API -&gt; Application Programming Interface (stores computer digestible data)
+  
   - Server: A powerful computer that hosts the API and Web Information
+  
   - Key: This helps the computer read the data we see on a website
    
 ---
 
+class: inverse, center, middle
+background-image:url("https://images.zapier.com/storage/photos/73c10a4db7511d53234d673e9b37aaf9.png?format=jpg")
+background-size:contain
+image-credits:https://zapier.com/learn/apis/chapter-1-introduction-to-apis/
+---
+
 ## Ok cool. How does this communication work?
   - Protocol: The "etiquette" underlying how computers communicate (e.g. HTTP).
+  
   - Requests: What the client asks of the server
+  
   - Make a request following the Protocol
+  
   - This follows the request response cycle
+  
 ---
 
 ## How do I make a request?
- - Requests conatain 4 things: 
+ - Requests contain 4 things: 
+ 
     - URL 
+    
     - Methods
+    
     - List of Headers 
+    
     - Body
 ---
 
 ## URL?
- - URL is an address on the internet for a thing that an API expands upon
+ - URL is an address for a thing on the internet that an API expands upon
+ 
   - Uniform Resource Locator
+  
   - Key: The API "creates" URLs for more resources we see on the web
-
----
-## Method? Similar to shell commands!
+  
+## Method? 
  - Methods: The "verbs" that clients use to talk with a server. 
+ 
   - Common Methods:
     - GET -&gt; (i.e. ask a server to retrieve information) 
     - POST -&gt; Ask for the creation of a new resource
     - PUT -&gt; Edit or update existing resource
     - DELETE -&gt; Delete a resource
- - Think of this as a data delivery
+    
+ - Think of this as a data delivery action
 ---
 
 ## Headers
   - The background (meta) information about the request
+  
   - Time request was made
+  
   - Size of the request body
+  
   - Credentials - (we will get to this later)
   
 ## Body
-  - The data the client wants to send to the server
+  - The specific data the client wants to send to the server
+  
   - Request details
 
 ---
-
 ## Great! We made our request!
   - We should get a "response"
-  - Response: The server's response. 
+  
+  - Response: The server's response.
+  
   - This includes: 
     - a Status Code (e.g. "404" if not found, or "200" if successful)
-    - a Header (i.e. meta-information about the reponse)
+    - a Header (i.e. meta-information about the response)
     - a Body (i.e the actual content that we're interested in).
 
 ---
 
-## How do we receive the information? con associative array
+## How do we receive the information?
   - A data representation method
-  - The server creates a format easy for both machines to understand
-  - JSON -&gt; Javascript Object Notation -&gt; Keys and Values
-  '''{r}
   
-  '''
+  - The server creates a format easy for both machines to understand
+  
+  - JSON -&gt; Javascript Object Notation -&gt; Keys and Values
+  
   - XML -&gt; Extensible Markup Language -&gt; Nodes
-  '''{r}
-  '''
+  
   - We can specify a specific format in our header to send/receive
     - Application -&gt; Receiving
     - Accept -&gt; Sending
@@ -104,9 +130,10 @@ class: center, middle, inverse, title-slide
 ---
 
 ## It can't be that simple.
-  - It seems like we suddenly have free reign over all information! Just Request!
-  - Unfortunately it is not that simple
+  - It seems like we suddenly have access to all information! Just Request!
+  
   - Servers need to authenticate just like logging into anything
+  
   - Types of authentication: 
     - Basic Auth
     - API Key Auth
@@ -118,8 +145,9 @@ class: center, middle, inverse, title-slide
   - Two most commonly used formats are: 
     - SOAP -&gt; XML based that standardizes structures for requests and responses
     - REST -&gt; Representational State Transfer -&gt; Most common (much user choice)
-  -Select a format and: 
-    - Choose the resources that should be used -&gt;
+    
+  - Select a format and: 
+    - Choose the resources that should be used
     - Assign resources to a url -&gt; creating an endpoint for the API
     - Create a level of permissions for allowable actions on resources
     - Figure out what pieces of data are required for each action
@@ -128,11 +156,13 @@ class: center, middle, inverse, title-slide
 
 ##Why are APIs Important? 
   - They integrate systems together -&gt; Like working with github
+  
   - Types of Integration
     - Client Driven -&gt; Using an app on your phone to do something
     - Server Driven -&gt; Using Polling to measure and send information to client
       - Polling -&gt; Asking for repeated updates
       - Long Polling -&gt; Increased efficiency, updates after something happens
+      
     - Polling can have some drawbacks -&gt; Too many requests will overload server
     - Webhooks -&gt; Lets the client act as a server and wait for requests
     
@@ -140,8 +170,11 @@ class: center, middle, inverse, title-slide
 
 ## Ok great Nathan, we can request and receive data. What now? 
   - Look for common documentation
+  
   - Use an HTTP Client
+  
   - Write our own code in a language specified in the API library
+  
   - Best to use a computer that can act as a server -&gt; Webhook
   
 ---
@@ -156,8 +189,6 @@ https://github.com/pubsubhubbub/
 
 REST Hooks:
 http://resthooks.org/docs/
-
----
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
