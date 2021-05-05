@@ -135,3 +135,15 @@ output:
   - Write our own code in a language specified in the API library
   - Best to use a computer that can act as a server -> Webhook
 ---
+
+## Resources
+
+https://zapier.com/learn/apis/
+
+https://github.com/uo-ec607/lectures/blob/master/07-web-apis/07-web-apis.md
+
+https://github.com/pubsubhubbub/
+
+http://resthooks.org/docs/
+
+---
