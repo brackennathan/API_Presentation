@@ -15,7 +15,7 @@ output:
       keep_md: true
 ---
 ## Problem!
-  -Computers cannot easily use information that humans create on the web
+  - Computers cannot easily use information that humans create on the web
   - Reading, Copying, and pasting thousands of data entries takes a long time
   - Lets get the "stupid" computer to understand inconsistent, "stupid" humans
 ---
@@ -65,8 +65,7 @@ output:
   - Time request was made
   - Size of the request body
   - Credentials - (we will get to this later)
----
-
+  
 ## Body
   - The data the client wants to send to the server
   - Request details
@@ -80,7 +79,8 @@ output:
     - a Status Code (e.g. "404" if not found, or "200" if successful)
     - a Header (i.e. meta-information about the reponse)
     - a Body (i.e the actual content that we're interested in).
---- 
+
+---
 
 ## How do we receive the information? con associative array
   - A data representation method
@@ -95,7 +95,8 @@ output:
   - We can specify a specific format in our header to send/receive
     - Application -> Receiving
     - Accept -> Sending
---- 
+    
+---
 
 ## But wait! Theres more!
   - It seems like we suddenly have free reign over all information! Just Request!
@@ -105,6 +106,7 @@ output:
     - Basic Auth
     - API Key Auth
     - OAuth -> Open Authorization -> Automates Key Exchange
+    
 ---
 
 ##API Design
@@ -116,6 +118,7 @@ output:
     - Assign resources to a url -> creating an endpoint for the API
     - Create a level of permissions for allowable actions on resources
     - Figure out what pieces of data are required for each action
+    
 ---
 
 ##Why are APIs Important? 
@@ -127,23 +130,26 @@ output:
       - Long Polling -> Increased efficiency, updates after something happens
     - Polling can have some drawbacks -> Too many requests will overload server
     - Webhooks -> Lets the client act as a server and wait for requests
---- 
+    
+---
 
 ## Ok great Nathan, we can request and receive data. What now? 
   - Look for common documentation
   - Use an HTTP Client
   - Write our own code in a language specified in the API library
   - Best to use a computer that can act as a server -> Webhook
+  
 ---
 
 ## Resources
 
+Zapier Book:
 https://zapier.com/learn/apis/
 
-https://github.com/uo-ec607/lectures/blob/master/07-web-apis/07-web-apis.md
-
+Subscription webhooks link:
 https://github.com/pubsubhubbub/
 
+REST Hooks:
 http://resthooks.org/docs/
 
 ---
