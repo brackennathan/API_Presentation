@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Science for Economists</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nathan Bracken" />
+    <script src="libs/header-attrs-2.7/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Science for Economists
+## API Presentation
+### Nathan Bracken
+
+---
+
+## Problem!
+  - Computers cannot easily use information that humans create on the web
+  - Reading, Copying, and pasting thousands of data entries takes a long time
+  - Lets get the "stupid" computer to understand inconsistent, "stupid" humans
+---
+
+## What is an API?
+  - Picture from zapier
+  - Client (Us): A program exchanges data with a server through an API 
+  - API -&gt; Application Programming Interface (stores computer digestible data)
+  - Server: A powerful computer that hosts the API and Web Information
+  - Key: This helps the computer read the data we see on a website
+   
+---
+
+## Ok cool. How does this communication work?
+  - Protocol: The "etiquette" underlying how computers communicate (e.g. HTTP).
+  - Requests: What the client asks of the server
+  - Make a request following the Protocol
+  - This follows the request response cycle
+---
+
+## How do I make a request?
+ - Requests conatain 4 things: 
+    - URL 
+    - Methods
+    - List of Headers 
+    - Body
+---
+
+## URL?
+ - URL is an address on the internet for a thing that an API expands upon
+  - Uniform Resource Locator
+  - Key: The API "creates" URLs for more resources we see on the web
+
+---
+## Method? Similar to shell commands!
+ - Methods: The "verbs" that clients use to talk with a server. 
+  - Common Methods:
+    - GET -&gt; (i.e. ask a server to retrieve information) 
+    - POST -&gt; Ask for the creation of a new resource
+    - PUT -&gt; Edit or update existing resource
+    - DELETE -&gt; Delete a resource
+ - Think of this as a data delivery
+---
+
+## Headers
+  - The background (meta) information about the request
+  - Time request was made
+  - Size of the request body
+  - Credentials - (we will get to this later)
+  
+## Body
+  - The data the client wants to send to the server
+  - Request details
+
+---
+
+## Great! We made our request!
+  - We should get a "response"
+  - Response: The server's response. 
+  - This includes: 
+    - a Status Code (e.g. "404" if not found, or "200" if successful)
+    - a Header (i.e. meta-information about the reponse)
+    - a Body (i.e the actual content that we're interested in).
+
+---
+
+## How do we receive the information? con associative array
+  - A data representation method
+  - The server creates a format easy for both machines to understand
+  - JSON -&gt; Javascript Object Notation -&gt; Keys and Values
+  '''r
+  
+  '''
+  - XML -&gt; Extensible Markup Language -&gt; Nodes
+  '''r
+  '''
+  - We can specify a specific format in our header to send/receive
+    - Application -&gt; Receiving
+    - Accept -&gt; Sending
+    
+---
+
+## But wait! Theres more!
+  - It seems like we suddenly have free reign over all information! Just Request!
+  - Unfortunately it's not that simple
+  - Servers need to authenticate just like logging into anything
+  - Types of authentication: 
+    - Basic Auth
+    - API Key Auth
+    - OAuth -&gt; Open Authorization -&gt; Automates Key Exchange
+    
+---
+
+##API Design
+  - Two most commonly used formats are: 
+    - SOAP -&gt; XML based that standardizes structures for requests and responses
+    - REST -&gt; Representational State Transfer -&gt; Most common (much user choice)
+  -Select a format and: 
+    - Choose the resources that should be used -&gt;
+    - Assign resources to a url -&gt; creating an endpoint for the API
+    - Create a level of permissions for allowable actions on resources
+    - Figure out what pieces of data are required for each action
+    
+---
+
+##Why are APIs Important? 
+  - They integrate systems together -&gt; Like working with github
+  - Types of Integration
+    - Client Driven -&gt; Using an app on your phone to do something
+    - Server Driven -&gt; Using Polling to measure and send information to client
+      - Polling -&gt; Asking for repeated updates
+      - Long Polling -&gt; Increased efficiency, updates after something happens
+    - Polling can have some drawbacks -&gt; Too many requests will overload server
+    - Webhooks -&gt; Lets the client act as a server and wait for requests
+    
+---
+
+## Ok great Nathan, we can request and receive data. What now? 
+  - Look for common documentation
+  - Use an HTTP Client
+  - Write our own code in a language specified in the API library
+  - Best to use a computer that can act as a server -&gt; Webhook
+  
+---
+
+## Resources
+
+https://zapier.com/learn/apis/
+
+https://github.com/uo-ec607/lectures/blob/master/07-web-apis/07-web-apis.md
+
+https://github.com/pubsubhubbub/
+
+http://resthooks.org/docs/
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"highlightSpans": true,
+"countIncrementalSlides": false,
+"keep_md": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
