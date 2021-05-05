@@ -64,6 +64,7 @@ output:
   - The background (meta) information about the request
   - Time request was made
   - Size of the request body
+  - Credentials - (we will get to this later)
 ---
 
 ## Body
@@ -81,6 +82,56 @@ output:
     - a Body (i.e the actual content that we're interested in).
 --- 
 
-## Data representaion 
-  - 
+## How do we receive the information? con associative array
+  - A data representation method
+  - The server creates a format easy for both machines to understand
+  - JSON -> Javascript Object Notation -> Keys and Values
+  '''r
+  
+  '''
+  - XML -> Extensible Markup Language -> Nodes
+  '''r
+  '''
+  - We can specify a specific format in our header to send/receive
+    - Application -> Receiving
+    - Accept -> Sending
 --- 
+
+## But wait! Theres more!
+  - It seems like we suddenly have free reign over all information! Just Request!
+  - Unfortunately it's not that simple
+  - Servers need to authenticate just like logging into anything
+  - Types of authentication: 
+    - Basic Auth
+    - API Key Auth
+    - OAuth -> Open Authorization -> Automates Key Exchange
+---
+
+##API Design
+  - Two most commonly used formats are: 
+    - SOAP -> XML based that standardizes structures for requests and responses
+    - REST -> Representational State Transfer -> Most common (much user choice)
+  -Select a format and: 
+    - Choose the resources that should be used ->
+    - Assign resources to a url -> creating an endpoint for the API
+    - Create a level of permissions for allowable actions on resources
+    - Figure out what pieces of data are required for each action
+---
+
+##Why are APIs Important? 
+  - They integrate systems together -> Like working with github
+  - Types of Integration
+    - Client Driven -> Using an app on your phone to do something
+    - Server Driven -> Using Polling to measure and send information to client
+      - Polling -> Asking for repeated updates
+      - Long Polling -> Increased efficiency, updates after something happens
+    - Polling can have some drawbacks -> Too many requests will overload server
+    - Webhooks -> Lets the client act as a server and wait for requests
+--- 
+
+## Ok great Nathan, we can request and receive data. What now? 
+  - Look for common documentation
+  - Use an HTTP Client
+  - Write our own code in a language specified in the API library
+  - Best to use a computer that can act as a server -> Webhook
+---
